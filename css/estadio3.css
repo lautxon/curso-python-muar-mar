@@ -1,0 +1,417 @@
+/* ========================================
+   ESTADIO 3 — ESTILOS ESPECÍFICOS
+   ======================================== */
+
+/* PROJECT INTRO */
+.estadio3-intro {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(55, 118, 171, 0.2) 100%);
+    border: 2px solid var(--python-blue);
+}
+
+.project-note {
+    background: rgba(255, 212, 59, 0.15);
+    border-left: 4px solid var(--python-yellow);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    margin-top: var(--spacing-md);
+    font-weight: 600;
+}
+
+/* PHASE BADGE */
+.phase-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--python-blue), var(--python-yellow));
+    color: var(--bg-primary);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* PROJECT PHASE */
+.project-phase {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+    border-left: 4px solid var(--python-blue);
+    transition: all var(--transition-normal);
+}
+
+.project-phase:hover {
+    border-left-color: var(--python-yellow);
+}
+
+/* PROJECT IDEAS */
+.project-ideas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.idea-card {
+    background: var(--bg-tertiary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.idea-card:hover {
+    border-color: var(--python-blue);
+    transform: translateY(-3px);
+}
+
+.idea-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.idea-card h4 {
+    color: var(--python-yellow);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1rem;
+}
+
+.idea-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* FORM GROUPS */
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--bg-primary);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* DATA STRUCTURE EXAMPLES */
+.data-structure-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.structure-example {
+    background: var(--bg-tertiary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--bg-primary);
+}
+
+.structure-example h4 {
+    color: var(--python-yellow);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1rem;
+}
+
+.structure-example pre {
+    background: var(--bg-primary);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    overflow-x: auto;
+    font-size: 0.85rem;
+}
+
+/* FUNCTION REQUIREMENTS */
+.function-requirements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.requirement-card {
+    background: var(--bg-tertiary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+    border-top: 3px solid var(--python-blue);
+}
+
+.requirement-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.requirement-card h4 {
+    color: var(--python-yellow);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1rem;
+}
+
+.requirement-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* INTEGRATION CHECKLIST */
+.integration-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.integration-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+}
+
+.integration-icon {
+    color: var(--success);
+}
+
+/* PORTFOLIO SECTION */
+.portfolio-section {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-lg) 0;
+    border: 2px dashed var(--python-yellow);
+}
+
+.portfolio-form {
+    margin: var(--spacing-md) 0;
+}
+
+/* INTERDISCIPLINARY SECTION */
+.interdisciplinary-section {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.connection-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.connection-card {
+    background: var(--bg-tertiary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.connection-card:hover {
+    border-color: var(--python-blue);
+    transform: translateY(-3px);
+}
+
+.connection-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.connection-card h4 {
+    color: var(--python-yellow);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1rem;
+}
+
+.connection-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* EVALUATION GRID */
+.evaluation-section {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.evaluation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-md) 0;
+}
+
+.evaluation-dimension {
+    background: var(--bg-tertiary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+}
+
+.evaluation-dimension h4 {
+    color: var(--python-yellow);
+    margin-bottom: var(--spacing-sm);
+}
+
+.evaluation-dimension p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.rating-stars {
+    display: flex;
+    gap: 5px;
+}
+
+.star {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+}
+
+.star:hover,
+.star.active {
+    color: var(--python-yellow);
+}
+
+/* CERTIFICATE */
+.certificate-preview {
+    background: var(--bg-secondary);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-lg) 0;
+    border: 3px solid var(--python-yellow);
+    text-align: center;
+}
+
+.certificate-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    color: #1a1a1a;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-lg) 0;
+    border: 4px solid var(--python-blue);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.certificate-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--python-blue);
+    padding-bottom: var(--spacing-md);
+}
+
+.certificate-icon {
+    font-size: 3rem;
+}
+
+.certificate-header h3 {
+    color: var(--python-blue);
+    font-size: 1.5rem;
+}
+
+.certificate-body p {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1rem;
+}
+
+.certificate-footer {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--bg-tertiary);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* CHECKLIST */
+.checklist {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-md) 0;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+}
+
+.checklist-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.checklist-item span {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .project-ideas {
+        grid-template-columns: 1fr;
+    }
+    
+    .data-structure-examples {
+        grid-template-columns: 1fr;
+    }
+    
+    .function-requirements {
+        grid-template-columns: 1fr;
+    }
+    
+    .evaluation-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .certificate-card {
+        padding: var(--spacing-md);
+    }
+}
+
+/* PHASE COMPLETED STATE */
+.project-phase.completed {
+    border-left-color: var(--success);
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(76, 175, 80, 0.1) 100%);
+}

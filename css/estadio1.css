@@ -1,0 +1,32 @@
+/* Estilos específicos para Estadio 1 */
+.lesson-section {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+    border-left: 4px solid var(--python-blue);
+}
+
+.code-editor textarea {
+    width: 100%;
+    min-height: 150px;
+    background: #1a1a1a;
+    border: 1px solid #404040;
+    border-radius: var(--radius-sm);
+    color: #ffffff;
+    font-family: 'Consolas', monospace;
+    padding: var(--spacing-sm);
+    font-size: 1rem;
+}
+
+.output-console {
+    background: #000000;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    margin-top: var(--spacing-sm);
+    min-height: 80px;
+    font-family: 'Consolas', monospace;
+}
+
+.output-line.success { color: var(--success); }
+.output-line.error { color: var(--error); }

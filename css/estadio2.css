@@ -1,0 +1,212 @@
+/* ========================================
+   ESTADIO 2 — ESTILOS ESPECÍFICOS
+   ======================================== */
+
+/* LESSON BADGE */
+.lesson-badge {
+    display: inline-block;
+    background: var(--python-yellow);
+    color: var(--bg-primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* VISUAL AIDS */
+.visual-aid {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+}
+
+.list-visualization {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.list-item {
+    background: var(--python-blue);
+    padding: 15px;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    min-width: 80px;
+}
+
+.list-item span:first-child {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--python-yellow);
+    margin-bottom: 5px;
+}
+
+.list-item span:last-child {
+    display: block;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.dict-visualization {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.dict-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-secondary);
+    padding: 10px 15px;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--python-yellow);
+}
+
+.dict-key {
+    color: var(--python-yellow);
+    font-family: 'Consolas', monospace;
+    font-weight: 700;
+}
+
+.dict-arrow {
+    color: var(--text-muted);
+}
+
+.dict-value {
+    color: var(--success);
+    font-family: 'Consolas', monospace;
+}
+
+/* ANALOGY BOX */
+.analogy-box {
+    background: rgba(255, 212, 59, 0.1);
+    border: 1px solid var(--python-yellow);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.analogy-box p {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* CHALLENGE TEXT */
+.challenge-text {
+    background: rgba(55, 118, 171, 0.1);
+    border-left: 3px solid var(--python-blue);
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary);
+}
+
+/* PROGRESS CIRCLES */
+.progreso-visual {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.progress-circles {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-md);
+}
+
+.progress-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.circle-inner {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--bg-tertiary);
+    border: 3px solid var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    transition: all var(--transition-normal);
+}
+
+.progress-circle.completed .circle-inner {
+    background: var(--success);
+    border-color: var(--success);
+    color: white;
+}
+
+.progress-circle span {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* MAR TRIGGER */
+.mar-trigger {
+    margin-top: var(--spacing-md);
+    text-align: center;
+}
+
+/* BITACORA HISTORY */
+.bitacora-history {
+    margin-top: var(--spacing-md);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.bitacora-entry-saved {
+    background: var(--bg-tertiary);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+    border-left: 3px solid var(--python-blue);
+}
+
+.bitacora-entry-saved .timestamp {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+.bitacora-entry-saved .text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ESTADIO 2 SPECIFIC COLORS */
+#lesson1 { border-left-color: var(--python-blue); }
+#lesson2 { border-left-color: var(--python-yellow); }
+#lesson3 { border-left-color: var(--success); }
+#lesson4 { border-left-color: var(--warning); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .list-visualization {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .progress-circles {
+        gap: var(--spacing-sm);
+    }
+    
+    .circle-inner {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+}
