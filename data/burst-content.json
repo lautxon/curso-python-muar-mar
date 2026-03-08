@@ -1,1 +1,152 @@
-
+{
+  "bursts": {
+    "welcome-estadio3": {
+      "id": "welcome-estadio3",
+      "type": "audio",
+      "icon": "🌐",
+      "title": "Bienvenido al Estadio 3",
+      "message": "Estadio 3: Acá no hay lecciones guiadas. Hay un proyecto que VOS diseñás. Usá todo lo aprendido. No hay una respuesta correcta.",
+      "duration": 15,
+      "actions": [
+        { "text": "✅ Comenzar Proyecto", "class": "btn-primary", "callback": "closeBurst" },
+        { "text": "🔇 Saltar", "class": "btn-secondary", "callback": "closeBurst" }
+      ],
+      "trigger": "estadio-start",
+      "estadios": ["3"]
+    },
+    "project-idea-selected": {
+      "id": "project-idea-selected",
+      "type": "celebration",
+      "icon": "✨",
+      "title": "¡Buena Elección!",
+      "message": "Esa es una idea viable. Ahora completá los detalles en el formulario.",
+      "duration": 8,
+      "actions": [
+        { "text": "✅ Continuar", "class": "btn-primary", "callback": "closeBurst" }
+      ],
+      "trigger": "on-idea-select",
+      "estadios": ["3"]
+    },
+    "phase1-guidance": {
+      "id": "phase1-guidance",
+      "type": "audio",
+      "icon": "🎯",
+      "title": "Consejo para Definir tu Proyecto",
+      "message": "Elegí algo que te importe de verdad. Si el proyecto resuelve un problema real para vos, vas a tener más motivación para completarlo.",
+      "duration": 12,
+      "actions": [
+        { "text": "✅ Entendido", "class": "btn-primary", "callback": "closeBurst" },
+        { "text": "🔇 Saltar", "class": "btn-secondary", "callback": "closeBurst" }
+      ],
+      "trigger": "manual",
+      "estadios": ["3"]
+    },
+    "phase2-structures": {
+      "id": "phase2-structures",
+      "type": "video",
+      "icon": "📊",
+      "title": "Estructuras de Datos",
+      "message": "Lista de diccionarios es más flexible para sistemas complejos. Diccionario de listas es más simple para datos homogéneos. Ambas funcionan.",
+      "duration": 15,
+      "actions": [
+        { "text": "✅ Probemos", "class": "btn-primary", "callback": "closeBurst" },
+        { "text": "🔇 Saltar", "class": "btn-secondary", "callback": "closeBurst" }
+      ],
+      "trigger": "manual",
+      "estadios": ["3"]
+    },
+    "phase-complete": {
+      "id": "phase-complete",
+      "type": "celebration",
+      "icon": "✅",
+      "title": "¡Fase Completada!",
+      "message": "Una fase menos. Seguí así.",
+      "duration": 6,
+      "actions": [
+        { "text": "🚀 Siguiente Fase", "class": "btn-primary", "callback": "nextPhase" }
+      ],
+      "trigger": "phase-complete",
+      "estadios": ["3"]
+    },
+    "project-working": {
+      "id": "project-working",
+      "type": "celebration",
+      "icon": "🎉",
+      "title": "¡Tu Proyecto Funciona!",
+      "message": "El código se ejecuta sin errores. Ahora completá el portafolio y la autoevaluación.",
+      "duration": 10,
+      "actions": [
+        { "text": "📁 Ir al Portafolio", "class": "btn-primary", "callback": "scrollToPortfolio" },
+        { "text": "🔇 Saltar", "class": "btn-secondary", "callback": "closeBurst" }
+      ],
+      "trigger": "on-project-working",
+      "estadios": ["3"]
+    },
+    "curso-completo": {
+      "id": "curso-completo",
+      "type": "animation",
+      "icon": "🏆",
+      "title": "¡Curso Completado!",
+      "message": "Felicitaciones. Completaste los 3 estadios. Ahora podés construir sistemas reales con Python. Esto es solo el comienzo.",
+      "duration": 15,
+      "actions": [
+        { "text": "📥 Descargar Certificado", "class": "btn-primary", "callback": "downloadCertificate" },
+        { "text": "📓 Guardar Reflexión", "class": "btn-secondary", "callback": "openBitacora" }
+      ],
+      "trigger": "curso-complete",
+      "estadios": ["3"]
+    },
+    "connection-math": {
+      "id": "connection-math",
+      "type": "info",
+      "icon": "📐",
+      "title": "Conexión: Matemática",
+      "message": "Podés agregar estadísticas a tu sistema: promedios, totales, máximos, mínimos. Todo eso es matemática aplicada.",
+      "duration": 10,
+      "actions": [
+        { "text": "✅ Explorar", "class": "btn-primary", "callback": "closeBurst" }
+      ],
+      "trigger": "manual",
+      "estadios": ["3"]
+    },
+    "connection-language": {
+      "id": "connection-language",
+      "type": "info",
+      "icon": "📝",
+      "title": "Conexión: Lengua",
+      "message": "La documentación de tu código es comunicación. Nombres claros de variables y funciones hacen tu código más legible.",
+      "duration": 10,
+      "actions": [
+        { "text": "✅ Explorar", "class": "btn-primary", "callback": "closeBurst" }
+      ],
+      "trigger": "manual",
+      "estadios": ["3"]
+    },
+    "connection-art": {
+      "id": "connection-art",
+      "type": "info",
+      "icon": "🎨",
+      "title": "Conexión: Arte/Diseño",
+      "message": "La experiencia de usuario importa. ¿Cómo interactúa alguien con tu sistema? ¿Es claro? ¿Es agradable?",
+      "duration": 10,
+      "actions": [
+        { "text": "✅ Explorar", "class": "btn-primary", "callback": "closeBurst" }
+      ],
+      "trigger": "manual",
+      "estadios": ["3"]
+    },
+    "connection-science": {
+      "id": "connection-science",
+      "type": "info",
+      "icon": "🔬",
+      "title": "Conexión: Ciencia",
+      "message": "Programar es hacer ciencia: hipótesis (¿funcionará?), prueba (ejecutar), iteración (corregir y mejorar).",
+      "duration": 10,
+      "actions": [
+        { "text": "✅ Explorar", "class": "btn-primary", "callback": "closeBurst" }
+      ],
+      "trigger": "manual",
+      "estadios": ["3"]
+    }
+  }
+}
