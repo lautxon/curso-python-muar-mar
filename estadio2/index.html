@@ -1,1 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadio 2 — Estructurado | Python MUAR</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/estadio2.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- HEADER CON PROGRESO -->
+        <header class="estadio-header">
+            <a href="../index.html" class="btn btn-secondary">← Volver al Inicio</a>
+            <div class="progress-bar">
+                <div class="progress-step completed">Inicio</div>
+                <div class="progress-step completed">Estadio 1</div>
+                <div class="progress-step active">Estadio 2</div>
+                <div class="progress-step">Estadio 3</div>
+            </div>
+        </header>
 
+        <!-- BIENVENIDA ESTADIO 2 -->
+        <section class="estadio-intro">
+            <div class="python-character">
+                <div class="python-avatar">🐍</div>
+                <div class="python-speech">
+                    <h2>Estadio 2: Organización Modular</h2>
+                    <p>En el Estadio 1 aprendiste a guardar un valor en una variable. Ahora vas a aprender a guardar <strong>múltiples valores</strong> y a <strong>reutilizar código</strong>.</p>
+                    <p><strong>Objeto Común:</strong> Una lista es como una caja con compartimentos. Una función es como una receta que podés usar muchas veces.</p>
+                    <p class="highlight">Recordá: lo que aprendiste en Estadio 1 sigue vigente. Acá lo estás organizando de forma más potente.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- LECCIÓN 1: LISTAS -->
+        <section class="lesson-section" id="lesson1">
+            <div class="lesson-badge">Lección 1 de 4</div>
+            <h2>📦 Lección 1: Listas</h2>
+            
+            <div class="lesson-content">
+                <div class="concept-panel">
+                    <h3>Concepto Nuclear</h3>
+                    <p>Una lista guarda múltiples valores en una sola variable. Cada valor tiene un número (índice) que empieza en 0.</p>
+                    <div class="code-example">
+                        <code>frutas = ["manzana", "banana", "naranja"]<br>print(frutas[0])  # Imprime: manzana</code>
+                    </div>
+                    <div class="visual-aid">
+                        <div class="list-visualization">
+                            <div class="list-item index-0">0<br>"manzana"</div>
+                            <div class="list-item index-1">1<br>"banana"</div>
+                            <div class="list-item index-2">2<br>"naranja"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-panel">
+                    <h3>Tu Turno</h3>
+                    <div class="code-editor" id="editor1">
+                        <textarea id="code1" placeholder="Creá una lista con 3 elementos y mostrá el primero:
+frutas = ['manzana', 'banana', 'naranja']
+print(frutas[0])"></textarea>
+                    </div>
+                    <div class="output-console" id="output1">
+                        <div class="output-line"># La salida aparecerá acá...</div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-success" onclick="runCode1()">▶️ Ejecutar</button>
+                        <button class="btn btn-secondary" onclick="clearCode1()">🗑️ Limpiar</button>
+                        <button class="btn btn-secondary" onclick="loadExample1()">📋 Cargar Ejemplo</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VERIFICACIÓN 1 -->
+            <div class="verification-panel">
+                <h3>✅ Verificación Rápida</h3>
+                <p>¿Qué imprime este código?</p>
+                <div class="code-snippet">
+                    <code>numeros = [10, 20, 30]<br>print(numeros[1])</code>
+                </div>
+                <div class="verification-options">
+                    <button class="btn btn-secondary" onclick="checkVerification1(10)">10</button>
+                    <button class="btn btn-secondary" onclick="checkVerification1(20)">20</button>
+                    <button class="btn btn-secondary" onclick="checkVerification1(30)">30</button>
+                </div>
+                <div id="verification1Feedback" class="feedback hidden"></div>
+            </div>
+
+            <!-- MAR BURST TRIGGER -->
+            <div class="mar-trigger">
+                <button class="btn btn-warning" onclick="triggerBurst('estadio2-lists')">🎧 Consejo de Python sobre Listas</button>
+            </div>
+        </section>
+
+        <!-- LECCIÓN 2: MÉTODOS DE LISTAS -->
+        <section class="lesson-section" id="lesson2">
+            <div class="lesson-badge">Lección 2 de 4</div>
+            <h2>🔧 Lección 2: Modificar Listas</h2>
+            
+            <div class="lesson-content">
+                <div class="concept-panel">
+                    <h3>Concepto Nuclear</h3>
+                    <p>Podés agregar, quitar y modificar elementos de una lista.</p>
+                    <div class="code-example">
+                        <code>frutas.append("uva")      # Agrega al final<br>frutas[0] = "pera"     # Modifica el primero<br>frutas.remove("banana")  # Quita un elemento</code>
+                    </div>
+                </div>
+
+                <div class="practice-panel">
+                    <h3>Desafío</h3>
+                    <p class="challenge-text">Creá una lista con 2 elementos, agregá uno más y mostrá la lista completa.</p>
+                    <div class="code-editor" id="editor2">
+                        <textarea id="code2" placeholder="Tu código acá..."></textarea>
+                    </div>
+                    <div class="output-console" id="output2"></div>
+                    <div class="btn-group">
+                        <button class="btn btn-success" onclick="runCode2()">▶️ Ejecutar</button>
+                        <button class="btn btn-secondary" onclick="clearCode2()">🗑️ Limpiar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VERIFICACIÓN 2 -->
+            <div class="verification-panel">
+                <h3>✅ Verificación Rápida</h3>
+                <button class="btn btn-secondary" onclick="triggerBurst('concept-check-lists', {
+                    question: '¿Qué método agrega un elemento al final de una lista?',
+                    options: [
+                        {label: '.add()', value: 'add'},
+                        {label: '.append()', value: 'append'},
+                        {label: '.insert()', value: 'insert'}
+                    ]
+                })">🎯 Verificación Interactiva</button>
+                <div id="verification2Feedback" class="feedback hidden"></div>
+            </div>
+        </section>
+
+        <!-- LECCIÓN 3: DICCIONARIOS -->
+        <section class="lesson-section" id="lesson3">
+            <div class="lesson-badge">Lección 3 de 4</div>
+            <h2>📖 Lección 3: Diccionarios</h2>
+            
+            <div class="lesson-content">
+                <div class="concept-panel">
+                    <h3>Concepto Nuclear</h3>
+                    <p>Un diccionario guarda pares de clave-valor. Es como una agenda: buscás por nombre (clave) y obtenés el dato (valor).</p>
+                    <div class="code-example">
+                        <code>persona = {"nombre": "María", "edad": 25}<br>print(persona["nombre"])  # Imprime: María</code>
+                    </div>
+                    <div class="visual-aid">
+                        <div class="dict-visualization">
+                            <div class="dict-item">
+                                <span class="dict-key">"nombre"</span>
+                                <span class="dict-arrow">→</span>
+                                <span class="dict-value">"María"</span>
+                            </div>
+                            <div class="dict-item">
+                                <span class="dict-key">"edad"</span>
+                                <span class="dict-arrow">→</span>
+                                <span class="dict-value">25</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-panel">
+                    <h3>Tu Turno</h3>
+                    <p class="challenge-text">Creá un diccionario con información sobre tu libro o película favorita.</p>
+                    <div class="code-editor" id="editor3">
+                        <textarea id="code3" placeholder="Ejemplo:
+pelicula = {'titulo': 'El Señor de los Anillos', 'anio': 2001}
+print(pelicula['titulo'])"></textarea>
+                    </div>
+                    <div class="output-console" id="output3"></div>
+                    <div class="btn-group">
+                        <button class="btn btn-success" onclick="runCode3()">▶️ Ejecutar</button>
+                        <button class="btn btn-secondary" onclick="clearCode3()">🗑️ Limpiar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VERIFICACIÓN 3 -->
+            <div class="verification-panel">
+                <h3>✅ Verificación Rápida</h3>
+                <p>¿Cómo accedés al valor "edad" en este diccionario?</p>
+                <div class="code-snippet">
+                    <code>datos = {"nombre": "Juan", "edad": 30}</code>
+                </div>
+                <div class="verification-options">
+                    <button class="btn btn-secondary" onclick="checkVerification3('datos[0]')">datos[0]</button>
+                    <button class="btn btn-secondary" onclick="checkVerification3('datos["edad"]')">datos["edad"]</button>
+                    <button class="btn btn-secondary" onclick="checkVerification3('datos.edad')">datos.edad</button>
+                </div>
+                <div id="verification3Feedback" class="feedback hidden"></div>
+            </div>
+        </section>
+
+        <!-- LECCIÓN 4: FUNCIONES -->
+        <section class="lesson-section" id="lesson4">
+            <div class="lesson-badge">Lección 4 de 4</div>
+            <h2>⚙️ Lección 4: Funciones</h2>
+            
+            <div class="lesson-content">
+                <div class="concept-panel">
+                    <h3>Concepto Nuclear</h3>
+                    <p>Una función es un bloque de código con nombre que podés ejecutar muchas veces. Es como una receta.</p>
+                    <div class="code-example">
+                        <code>def saludar(nombre):<br>&nbsp;&nbsp;&nbsp;&nbsp;print("Hola " + nombre)<br><br>saludar("María")  # Imprime: Hola María</code>
+                    </div>
+                    <div class="analogy-box">
+                        <p><strong>🍳 Analogía:</strong> Una función es como una receta de cocina. La escribís una vez, pero la podés usar cada vez que querés cocinar ese plato.</p>
+                    </div>
+                </div>
+
+                <div class="practice-panel">
+                    <h3>Desafío Final Estadio 2</h3>
+                    <p class="challenge-text">Creá una función que reciba un número y devuelva su doble. Luego usala con 3 valores distintos.</p>
+                    <div class="code-editor" id="editor4">
+                        <textarea id="code4" placeholder="def doble(numero):
+    return numero * 2
+
+print(doble(5))
+print(doble(10))
+print(doble(15))"></textarea>
+                    </div>
+                    <div class="output-console" id="output4"></div>
+                    <div class="btn-group">
+                        <button class="btn btn-success" onclick="runCode4()">▶️ Ejecutar</button>
+                        <button class="btn btn-secondary" onclick="clearCode4()">🗑️ Limpiar</button>
+                        <button class="btn btn-primary" onclick="completeEstadio2()">✅ Completar Estadio 2</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VERIFICACIÓN 4 -->
+            <div class="verification-panel">
+                <h3>✅ Verificación Final</h3>
+                <button class="btn btn-secondary" onclick="triggerBurst('concept-check-functions', {
+                    question: '¿Qué palabra clave se usa para definir una función?',
+                    options: [
+                        {label: 'function', value: 'function'},
+                        {label: 'def', value: 'def'},
+                        {label: 'func', value: 'func'}
+                    ]
+                })">🎯 Verificación de Funciones</button>
+                <div id="verification4Feedback" class="feedback hidden"></div>
+            </div>
+        </section>
+
+        <!-- BITÁCORA ESTADIO 2 -->
+        <section class="bitacora-section">
+            <h2>📓 Tu Bitácora</h2>
+            <p>¿Qué diferencia notás entre Estadio 1 y Estadio 2? ¿Qué concepto te resultó más útil? ¿Qué querés explorar más?</p>
+            <textarea class="bitacora-entry" placeholder="Escribí tu reflexión acá..."></textarea>
+            <button class="btn btn-secondary" onclick="saveBitacoraEntry()">💾 Guardar en Bitácora</button>
+            <div id="bitacoraHistory" class="bitacora-history"></div>
+        </section>
+
+        <!-- PROGRESO VISUAL -->
+        <section class="progreso-visual">
+            <h2>Tu Progreso en Estadio 2</h2>
+            <div class="progress-circles">
+                <div class="progress-circle" data-lesson="1">
+                    <div class="circle-inner">1</div>
+                    <span>Listas</span>
+                </div>
+                <div class="progress-circle" data-lesson="2">
+                    <div class="circle-inner">2</div>
+                    <span>Métodos</span>
+                </div>
+                <div class="progress-circle" data-lesson="3">
+                    <div class="circle-inner">3</div>
+                    <span>Diccionarios</span>
+                </div>
+                <div class="progress-circle" data-lesson="4">
+                    <div class="circle-inner">4</div>
+                    <span>Funciones</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- NAVEGACIÓN -->
+        <section class="navigation-section">
+            <a href="../estadio1/index.html" class="btn btn-secondary">← Volver a Estadio 1</a>
+            <a href="../index.html" class="btn btn-secondary">Ir al Inicio</a>
+            <a href="../estadio3/index.html" class="btn btn-primary">Ir a Estadio 3 →</a>
+        </section>
+    </div>
+
+    <!-- MAR BURST MODAL -->
+    <div class="mar-burst-modal" id="marBurstModal">
+        <div class="burst-content"></div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/mar-bursts.js"></script>
+    <script src="../js/bitacora.js"></script>
+    <script src="../js/progreso.js"></script>
+    <script src="js/estadio2.js"></script>
+</body>
+</html>
