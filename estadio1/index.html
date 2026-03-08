@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadio 1 — Lineal | Python MUAR</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/estadio1.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- HEADER CON PROGRESO -->
+        <header class="estadio-header">
+            <a href="../index.html" class="btn btn-secondary">← Volver al Inicio</a>
+            <div class="progress-bar">
+                <div class="progress-step completed">Inicio</div>
+                <div class="progress-step active">Estadio 1</div>
+                <div class="progress-step">Estadio 2</div>
+                <div class="progress-step">Estadio 3</div>
+            </div>
+        </header>
+
+        <!-- BIENVENIDA ESTADIO 1 -->
+        <section class="estadio-intro">
+            <div class="python-character">
+                <div class="python-avatar">🐍</div>
+                <div class="python-speech">
+                    <h2>Estadio 1: Contacto Directo</h2>
+                    <p>Acá vas a tocar código por primera vez. Sin miedo. Sin explicaciones largas.</p>
+                    <p><strong>Objeto Común:</strong> Una variable es una etiqueta para una caja. Eso es todo. Lo vamos a explorar de 3 formas distintas.</p>
+                    <p class="highlight">Recordá: podés ignorar mis interrupciones si querés. Pero quizás te ayuden.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- LECCIÓN 1: VARIABLES -->
+        <section class="lesson-section" id="lesson1">
+            <h2>📍 Lección 1: Tu Primera Variable</h2>
+            
+            <div class="lesson-content">
+                <div class="concept-panel">
+                    <h3>Concepto Nuclear</h3>
+                    <p>Una variable guarda un valor con un nombre.</p>
+                    <div class="code-example">
+                        <code>nombre = "María"</code>
+                    </div>
+                </div>
+
+                <div class="practice-panel">
+                    <h3>Tu Turno</h3>
+                    <div class="code-editor" id="editor1">
+                        <textarea id="code1" placeholder="Escribí acá:&#10;nombre = 'TuNombre'&#10;print(nombre)"></textarea>
+                    </div>
+                    <div class="output-console" id="output1">
+                        <div class="output-line"># La salida aparecerá acá...</div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-success" onclick="runCode1()">▶️ Ejecutar</button>
+                        <button class="btn btn-secondary" onclick="clearCode1()">🗑️ Limpiar</button>
+                        <button class="btn btn-secondary" onclick="triggerBurst('welcome')">🎧 Consejo de Python</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VERIFICACIÓN 1 -->
+            <div class="verification-panel">
+                <h3>✅ Verificación Rápida</h3>
+                <p>¿Qué imprime este código?</p>
+                <div class="code-snippet">
+                    <code>x = 5<br>x = 10<br>print(x)</code>
+                </div>
+                <div class="verification-options">
+                    <button class="btn btn-secondary" onclick="checkVerification1(5)">5</button>
+                    <button class="btn btn-secondary" onclick="checkVerification1(10)">10</button>
+                    <button class="btn btn-secondary" onclick="checkVerification1('error')">Error</button>
+                </div>
+                <div id="verification1Feedback" class="feedback hidden"></div>
+            </div>
+        </section>
+
+        <!-- LECCIÓN 2: TIPOS -->
+        <section class="lesson-section" id="lesson2">
+            <h2>📍 Lección 2: Tipos de Datos</h2>
+            
+            <div class="lesson-content">
+                <div class="concept-panel">
+                    <h3>Concepto Nuclear</h3>
+                    <p>Python distingue entre texto (string) y números (int).</p>
+                    <div class="code-example">
+                        <code>texto = "Hola"<br>numero = 42</code>
+                    </div>
+                </div>
+
+                <div class="practice-panel">
+                    <h3>Tu Turno</h3>
+                    <div class="code-editor" id="editor2">
+                        <textarea id="code2" placeholder="Creá una variable de texto y una numérica"></textarea>
+                    </div>
+                    <div class="output-console" id="output2"></div>
+                    <div class="btn-group">
+                        <button class="btn btn-success" onclick="runCode2()">▶️ Ejecutar</button>
+                        <button class="btn btn-secondary" onclick="triggerBurst('concept-check', {
+                            question: '¿Qué tipo es: edad = 25?',
+                            options: [{label: 'Texto', value: 'string'}, {label: 'Número', value: 'int'}]
+                        })">🎯 Verificación</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LECCIÓN 3: OPERACIONES -->
+        <section class="lesson-section" id="lesson3">
+            <h2>📍 Lección 3: Operaciones Básicas</h2>
+            
+            <div class="lesson-content">
+                <div class="concept-panel">
+                    <h3>Concepto Nuclear</h3>
+                    <p>Podés operar con variables numéricas.</p>
+                    <div class="code-example">
+                        <code>edad = 25<br>edad = edad + 1<br>print(edad)</code>
+                    </div>
+                </div>
+
+                <div class="practice-panel">
+                    <h3>Desafío Final Estadio 1</h3>
+                    <div class="code-editor" id="editor3">
+                        <textarea id="code3" placeholder="Creá una variable, modificá su valor y mostralo"></textarea>
+                    </div>
+                    <div class="output-console" id="output3"></div>
+                    <div class="btn-group">
+                        <button class="btn btn-success" onclick="runCode3()">▶️ Ejecutar</button>
+                        <button class="btn btn-primary" onclick="completeEstadio1()">✅ Completar Estadio 1</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BITÁCORA ESTADIO 1 -->
+        <section class="bitacora-section">
+            <h2>📓 Tu Bitácora</h2>
+            <p>¿Qué aprendiste hoy? ¿Qué te costó? ¿Qué querés explorar más?</p>
+            <textarea class="bitacora-entry" placeholder="Escribí tu reflexión acá..."></textarea>
+            <button class="btn btn-secondary" onclick="saveBitacoraEntry()">💾 Guardar en Bitácora</button>
+        </section>
+
+        <!-- NAVEGACIÓN -->
+        <section class="navigation-section">
+            <a href="../index.html" class="btn btn-secondary">← Volver al Inicio</a>
+            <a href="../estadio2/index.html" class="btn btn-primary">Ir a Estadio 2 →</a>
+        </section>
+    </div>
+
+    <!-- MAR BURST MODAL -->
+    <div class="mar-burst-modal" id="marBurstModal">
+        <div class="burst-content"></div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/mar-bursts.js"></script>
+    <script src="../js/bitacora.js"></script>
+    <script src="js/estadio1.js"></script>
+</body>
+</html>
