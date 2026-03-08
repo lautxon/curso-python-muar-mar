@@ -1,1 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadio 3 — Abstracto | Python MUAR</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/estadio3.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- HEADER CON PROGRESO -->
+        <header class="estadio-header">
+            <a href="../index.html" class="btn btn-secondary">← Volver al Inicio</a>
+            <div class="progress-bar">
+                <div class="progress-step completed">Inicio</div>
+                <div class="progress-step completed">Estadio 1</div>
+                <div class="progress-step completed">Estadio 2</div>
+                <div class="progress-step active">Estadio 3</div>
+            </div>
+        </header>
 
+        <!-- BIENVENIDA ESTADIO 3 -->
+        <section class="estadio-intro estadio3-intro">
+            <div class="python-character">
+                <div class="python-avatar">🐍</div>
+                <div class="python-speech">
+                    <h2>Estadio 3: Modelado Sistémico</h2>
+                    <p>Acá no hay lecciones guiadas. Hay un <strong>proyecto real</strong> que vos diseñás.</p>
+                    <p><strong>Objeto Común:</strong> Un sistema de gestión que usa TODO lo aprendido: variables, listas, diccionarios y funciones.</p>
+                    <p class="highlight">No hay una respuesta correcta. Hay múltiples caminos. Tu proyecto es único.</p>
+                    <p class="project-note">🎯 <strong>Consigna:</strong> Construí un sistema que gestione algo que te importe (libros, películas, gastos, estudiantes, inventario, etc.)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FASE 1: DEFINICIÓN DEL PROYECTO -->
+        <section class="project-phase" id="phase1">
+            <div class="phase-badge">Fase 1 de 4</div>
+            <h2>🎯 Fase 1: Definí tu Proyecto</h2>
+            
+            <div class="phase-content">
+                <div class="concept-panel">
+                    <h3>¿Qué vas a gestionar?</h3>
+                    <p>Elegí un tema que te importe. Algunos ejemplos:</p>
+                    <div class="project-ideas">
+                        <div class="idea-card" onclick="selectProjectIdea('biblioteca')">
+                            <span class="idea-icon">📚</span>
+                            <h4>Biblioteca Personal</h4>
+                            <p>Gestioná tus libros: título, autor, año, estado (leído/pendiente)</p>
+                        </div>
+                        <div class="idea-card" onclick="selectProjectIdea('peliculas')">
+                            <span class="idea-icon">🎬</span>
+                            <h4>Películas Vistas</h4>
+                            <p>Registro de películas: título, género, rating, fecha de vista</p>
+                        </div>
+                        <div class="idea-card" onclick="selectProjectIdea('gastos')">
+                            <span class="idea-icon">💰</span>
+                            <h4>Control de Gastos</h4>
+                            <p>Seguimiento de gastos: categoría, monto, fecha, descripción</p>
+                        </div>
+                        <div class="idea-card" onclick="selectProjectIdea('inventario')">
+                            <span class="idea-icon">📦</span>
+                            <h4>Inventario de Tienda</h4>
+                            <p>Productos: nombre, precio, stock, categoría</p>
+                        </div>
+                        <div class="idea-card" onclick="selectProjectIdea('personalizado')">
+                            <span class="idea-icon">✨</span>
+                            <h4>Tu Idea</h4>
+                            <p>Proponé tu propio sistema de gestión</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-panel">
+                    <h3>Tu Definición de Proyecto</h3>
+                    <form id="projectDefinitionForm">
+                        <div class="form-group">
+                            <label>Nombre del Sistema:</label>
+                            <input type="text" id="projectName" placeholder="Ej: Mi Biblioteca Personal">
+                        </div>
+                        <div class="form-group">
+                            <label>¿Qué vas a gestionar?</label>
+                            <textarea id="projectDescription" placeholder="Describí en 2-3 frases qué hace tu sistema..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Entidades principales (qué datos vas a guardar):</label>
+                            <textarea id="projectEntities" placeholder="Ej: Libros (título, autor, año, estado)&#10;Usuarios (nombre, email, libros_prestados)"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Funciones clave (qué operaciones va a hacer):</label>
+                            <textarea id="projectFunctions" placeholder="Ej: agregar_libro(), buscar_por_autor(), prestar_libro(), mostrar_todos()"></textarea>
+                        </div>
+                    </form>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" onclick="saveProjectDefinition()">💾 Guardar Definición</button>
+                        <button class="btn btn-secondary" onclick="triggerBurst('phase1-guidance')">🎧 Consejo de Python</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VERIFICACIÓN FASE 1 -->
+            <div class="verification-panel">
+                <h3>✅ Checklist de Viabilidad</h3>
+                <div class="checklist">
+                    <label class="checklist-item">
+                        <input type="checkbox" id="check1" onchange="updatePhaseProgress(1)">
+                        <span>El proyecto usa al menos 1 lista</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" id="check2" onchange="updatePhaseProgress(1)">
+                        <span>El proyecto usa al menos 1 diccionario</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" id="check3" onchange="updatePhaseProgress(1)">
+                        <span>El proyecto tiene al menos 3 funciones</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" id="check4" onchange="updatePhaseProgress(1)">
+                        <span>El proyecto resuelve un problema real para vos</span>
+                    </label>
+                </div>
+                <div id="phase1Feedback" class="feedback hidden"></div>
+            </div>
+        </section>
+
+        <!-- FASE 2: ESTRUCTURA DE DATOS -->
+        <section class="project-phase" id="phase2">
+            <div class="phase-badge">Fase 2 de 4</div>
+            <h2>📊 Fase 2: Diseñá la Estructura de Datos</h2>
+            
+            <div class="phase-content">
+                <div class="concept-panel">
+                    <h3>Modelá tus Datos</h3>
+                    <p>Antes de codificar, pensá cómo vas a organizar la información. ¿Listas? ¿Diccionarios? ¿Ambos?</p>
+                    <div class="data-structure-examples">
+                        <div class="structure-example">
+                            <h4>Opción A: Lista de Diccionarios</h4>
+                            <pre><code>biblioteca = [
+    {"titulo": "1984", "autor": "Orwell", "anio": 1949},
+    {"titulo": "Python Crash Course", "autor": "Matthes", "anio": 2019}
+]</code></pre>
+                        </div>
+                        <div class="structure-example">
+                            <h4>Opción B: Diccionario de Listas</h4>
+                            <pre><code>biblioteca = {
+    "titulos": ["1984", "Python Crash Course"],
+    "autores": ["Orwell", "Matthes"],
+    "anios": [1949, 2019]
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-panel">
+                    <h3>Tu Estructura de Datos</h3>
+                    <div class="code-editor" id="editor-phase2">
+                        <textarea id="code-phase2" placeholder="# Definí tu estructura de datos inicial
+# Ejemplo:
+mi_sistema = []
+
+# Ahora agregá algunos datos de prueba:
+# mi_sistema.append({...})"></textarea>
+                    </div>
+                    <div class="output-console" id="output-phase2">
+                        <div class="output-line"># La estructura aparecerá acá...</div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-success" onclick="runCodePhase2()">▶️ Ejecutar</button>
+                        <button class="btn btn-secondary" onclick="clearCodePhase2()">🗑️ Limpiar</button>
+                        <button class="btn btn-secondary" onclick="triggerBurst('phase2-structures')">🎧 Ver Ejemplos</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VERIFICACIÓN FASE 2 -->
+            <div class="verification-panel">
+                <h3>✅ Verificación de Estructura</h3>
+                <button class="btn btn-secondary" onclick="triggerBurst('phase2-check', {
+                    question: '¿Tu estructura permite agregar nuevos elementos fácilmente?',
+                    options: [
+                        {label: 'Sí, con .append() o similar', value: 'yes'},
+                        {label: 'No, es fija', value: 'no'},
+                        {label: 'No estoy seguro', value: 'unsure'}
+                    ]
+                })">🎯 Verificar Flexibilidad</button>
+                <div id="phase2Feedback" class="feedback hidden"></div>
+            </div>
+        </section>
+
+        <!-- FASE 3: FUNCIONES Y LÓGICA -->
+        <section class="project-phase" id="phase3">
+            <div class="phase-badge">Fase 3 de 4</div>
+            <h2>⚙️ Fase 3: Implementá las Funciones</h2>
+            
+            <div class="phase-content">
+                <div class="concept-panel">
+                    <h3>Funciones Esenciales</h3>
+                    <p>Todo sistema necesita al menos estas operaciones:</p>
+                    <div class="function-requirements">
+                        <div class="requirement-card">
+                            <span class="requirement-icon">➕</span>
+                            <h4>Agregar</h4>
+                            <p>Una función para añadir nuevos elementos al sistema</p>
+                        </div>
+                        <div class="requirement-card">
+                            <span class="requirement-icon">🔍</span>
+                            <h4>Buscar</h4>
+                            <p>Una función para encontrar elementos específicos</p>
+                        </div>
+                        <div class="requirement-card">
+                            <span class="requirement-icon">📋</span>
+                            <h4>Mostrar</h4>
+                            <p>Una función para listar todos los elementos</p>
+                        </div>
+                        <div class="requirement-card">
+                            <span class="requirement-icon">✏️</span>
+                            <h4>Modificar/Eliminar</h4>
+                            <p>Una función para actualizar o quitar elementos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-panel">
+                    <h3>Tu Código de Funciones</h3>
+                    <div class="code-editor" id="editor-phase3">
+                        <textarea id="code-phase3" placeholder="# Definí tus funciones principales
+# Ejemplo:
+
+def agregar_elemento(sistema, datos):
+    sistema.append(datos)
+    print("Elemento agregado")
+
+def buscar_elemento(sistema, criterio):
+    for elemento in sistema:
+        if criterio in elemento.values():
+            return elemento
+    return None
+
+def mostrar_todos(sistema):
+    for i, elemento in enumerate(sistema):
+        print(f"{i}: {elemento}")
+
+# Probá tus funciones:
+mi_sistema = []
+agregar_elemento(mi_sistema, {"nombre": "Test"})
+mostrar_todos(mi_sistema)"></textarea>
+                    </div>
+                    <div class="output-console" id="output-phase3"></div>
+                    <div class="btn-group">
+                        <button class="btn btn-success" onclick="runCodePhase3()">▶️ Ejecutar</button>
+                        <button class="btn btn-secondary" onclick="clearCodePhase3()">🗑️ Limpiar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VERIFICACIÓN FASE 3 -->
+            <div class="verification-panel">
+                <h3>✅ Checklist de Funciones</h3>
+                <div class="checklist">
+                    <label class="checklist-item">
+                        <input type="checkbox" id="func1" onchange="updatePhaseProgress(3)">
+                        <span>Tengo al menos 1 función que agrega datos</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" id="func2" onchange="updatePhaseProgress(3)">
+                        <span>Tengo al menos 1 función que busca datos</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" id="func3" onchange="updatePhaseProgress(3)">
+                        <span>Tengo al menos 1 función que muestra datos</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" id="func4" onchange="updatePhaseProgress(3)">
+                        <span>Las funciones se pueden llamar múltiples veces</span>
+                    </label>
+                </div>
+                <div id="phase3Feedback" class="feedback hidden"></div>
+            </div>
+        </section>
+
+        <!-- FASE 4: INTEGRACIÓN Y PORTAFOLIO -->
+        <section class="project-phase" id="phase4">
+            <div class="phase-badge">Fase 4 de 4</div>
+            <h2>🎓 Fase 4: Integración y Portafolio</h2>
+            
+            <div class="phase-content">
+                <div class="concept-panel">
+                    <h3>Uní Todo</h3>
+                    <p>Acá integrás las fases 1, 2 y 3 en un programa completo que funcione de principio a fin.</p>
+                    <div class="integration-checklist">
+                        <div class="integration-item">
+                            <span class="integration-icon">✅</span>
+                            <span>Estructura de datos definida</span>
+                        </div>
+                        <div class="integration-item">
+                            <span class="integration-icon">✅</span>
+                            <span>Funciones implementadas</span>
+                        </div>
+                        <div class="integration-item">
+                            <span class="integration-icon">✅</span>
+                            <span>Pruebas ejecutadas</span>
+                        </div>
+                        <div class="integration-item">
+                            <span class="integration-icon">✅</span>
+                            <span>Documentación completada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-panel">
+                    <h3>Tu Proyecto Final</h3>
+                    <div class="code-editor" id="editor-phase4">
+                        <textarea id="code-phase4" placeholder="# TU PROYECTO COMPLETO
+# Copiá acá todo tu código de las fases anteriores
+# y armá un programa que funcione de principio a fin
+
+# ============================================
+# DEFINICIÓN DE DATOS
+# ============================================
+
+# ============================================
+# FUNCIONES
+# ============================================
+
+# ============================================
+# PROGRAMA PRINCIPAL
+# ============================================"></textarea>
+                    </div>
+                    <div class="output-console" id="output-phase4"></div>
+                    <div class="btn-group">
+                        <button class="btn btn-success" onclick="runCodePhase4()">▶️ Ejecutar Proyecto</button>
+                        <button class="btn btn-secondary" onclick="clearCodePhase4()">🗑️ Limpiar</button>
+                        <button class="btn btn-primary" onclick="completeEstadio3()">🎓 Completar Estadio 3</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PORTAFOLIO -->
+            <div class="portfolio-section">
+                <h3>📁 Tu Portafolio</h3>
+                <p>Documentá tu proyecto para compartirlo o volver a él después.</p>
+                <div class="portfolio-form">
+                    <div class="form-group">
+                        <label>Título del Proyecto:</label>
+                        <input type="text" id="portfolioTitle" placeholder="Nombre de tu sistema">
+                    </div>
+                    <div class="form-group">
+                        <label>Descripción (qué hace, para quién, por qué lo hiciste):</label>
+                        <textarea id="portfolioDescription" placeholder="Contá la historia de tu proyecto..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Desafíos que enfrentaste y cómo los resolviste:</label>
+                        <textarea id="portfolioChallenges" placeholder="¿Qué fue difícil? ¿Cómo lo superaste?"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Qué aprenderías si tuvieras más tiempo?</label>
+                        <textarea id="portfolioFuture" placeholder="Próximos pasos, mejoras posibles..."></textarea>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-secondary" onclick="savePortfolio()">💾 Guardar Portafolio</button>
+                    <button class="btn btn-secondary" onclick="exportPortfolio()">📥 Exportar como PDF</button>
+                    <button class="btn btn-secondary" onclick="sharePortfolio()">🔗 Generar Link para Compartir</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONEXIONES INTERDISCIPLINARIAS -->
+        <section class="interdisciplinary-section">
+            <h2>🌐 Conexiones Interdisciplinarias</h2>
+            <p>Tu proyecto de Python se conecta con otros campos del conocimiento. Explorá algunas:</p>
+            <div class="connection-cards">
+                <div class="connection-card" onclick="triggerBurst('connection-math')">
+                    <span class="connection-icon">📐</span>
+                    <h4>Matemática</h4>
+                    <p>Estadísticas, cálculos, análisis de datos en tu sistema</p>
+                </div>
+                <div class="connection-card" onclick="triggerBurst('connection-language')">
+                    <span class="connection-icon">📝</span>
+                    <h4>Lengua</h4>
+                    <p>Documentación, narrativa del proyecto, comunicación clara</p>
+                </div>
+                <div class="connection-card" onclick="triggerBurst('connection-art')">
+                    <span class="connection-icon">🎨</span>
+                    <h4>Arte/Diseño</h4>
+                    <p>Interfaz, experiencia de usuario, estética del código</p>
+                </div>
+                <div class="connection-card" onclick="triggerBurst('connection-science')">
+                    <span class="connection-icon">🔬</span>
+                    <h4>Ciencia</h4>
+                    <p>Método científico: hipótesis, prueba, iteración</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BITÁCORA ESTADIO 3 -->
+        <section class="bitacora-section">
+            <h2>📓 Tu Bitácora de Proyecto</h2>
+            <p>Documentá tu proceso: decisiones, errores, descubrimientos, reflexiones.</p>
+            <textarea class="bitacora-entry" placeholder="Escribí tu reflexión sobre el proceso de proyecto..."></textarea>
+            <button class="btn btn-secondary" onclick="saveBitacoraEntry()">💾 Guardar en Bitácora</button>
+            <div id="bitacoraHistory" class="bitacora-history"></div>
+        </section>
+
+        <!-- EVALUACIÓN MULTIDIMENSIONAL -->
+        <section class="evaluation-section">
+            <h2>📊 Autoevaluación del Proyecto</h2>
+            <p>Evaluate en 4 dimensiones (no hay nota, es para tu crecimiento):</p>
+            <div class="evaluation-grid">
+                <div class="evaluation-dimension">
+                    <h4>🔧 Dimensión Técnica</h4>
+                    <p>¿El código funciona? ¿Es eficiente?</p>
+                    <div class="rating-stars" data-dimension="tecnica">
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
+                    </div>
+                </div>
+                <div class="evaluation-dimension">
+                    <h4>🧠 Dimensión Conceptual</h4>
+                    <p>¿Entendés lo que hace cada parte?</p>
+                    <div class="rating-stars" data-dimension="conceptual">
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
+                    </div>
+                </div>
+                <div class="evaluation-dimension">
+                    <h4>🔗 Dimensión Conexión</h4>
+                    <p>¿Se conecta con otros conocimientos?</p>
+                    <div class="rating-stars" data-dimension="conexion">
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
+                    </div>
+                </div>
+                <div class="evaluation-dimension">
+                    <h4>🤔 Dimensión Metacognición</h4>
+                    <p>¿Podés explicar tu proceso de aprendizaje?</p>
+                    <div class="rating-stars" data-dimension="metacognicion">
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="saveEvaluation()">💾 Guardar Autoevaluación</button>
+        </section>
+
+        <!-- NAVEGACIÓN -->
+        <section class="navigation-section">
+            <a href="../estadio2/index.html" class="btn btn-secondary">← Volver a Estadio 2</a>
+            <a href="../index.html" class="btn btn-secondary">Ir al Inicio</a>
+            <a href="../certificado.html" class="btn btn-success">🏆 Obtener Certificado</a>
+        </section>
+
+        <!-- CERTIFICADO DE COMPLECIÓN -->
+        <section class="certificate-preview hidden" id="certificateSection">
+            <h2>🏆 ¡Felicitaciones!</h2>
+            <p>Completaste los 3 estadios del curso de Python con MUAR + MAR.</p>
+            <div class="certificate-card">
+                <div class="certificate-header">
+                    <span class="certificate-icon">🐍</span>
+                    <h3>Certificado de Completación</h3>
+                </div>
+                <div class="certificate-body">
+                    <p>Este certificado acredita que <strong id="certName">[Tu Nombre]</strong></p>
+                    <p>ha completado el curso de <strong>Python con MUAR 2.1 + MAR 1.0</strong></p>
+                    <p>desarrollando un proyecto integrador en el Estadio 3.</p>
+                </div>
+                <div class="certificate-footer">
+                    <p id="certDate">Fecha: --/--/----</p>
+                    <p id="certProject">Proyecto: --</p>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="downloadCertificate()">📥 Descargar Certificado</button>
+                <button class="btn btn-secondary" onclick="shareCertificate()">🔗 Compartir Logro</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- MAR BURST MODAL -->
+    <div class="mar-burst-modal" id="marBurstModal">
+        <div class="burst-content"></div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/mar-bursts.js"></script>
+    <script src="../js/bitacora.js"></script>
+    <script src="../js/progreso.js"></script>
+    <script src="js/estadio3.js"></script>
+</body>
+</html>
